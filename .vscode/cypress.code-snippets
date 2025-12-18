@@ -1,0 +1,68 @@
+{
+  "Cypress beforeEach": {
+    "prefix": "c_before_each",
+    "body": [
+      "beforeEach(() => {",
+      "Cypress.on('uncaught:exception', (err, runnable) => {",
+      "return false;",
+      "});",
+      "cy.visit('${1:ruta-de-pagina}')",
+      "})"
+    ],
+    "description": "Snippet para escribir texto en un campo con selector personalizable"
+  },
+  "Cypress Test Base": {
+    "prefix": "c_test_base",
+    "body": [
+      "/// <reference types = 'cypress' />",
+      "",
+      "describe('${1:Nombre de la suite}', () => {",
+      "    beforeEach(() => {",
+      "        Cypress.on('uncaught:exception', (err, runnable) => {",
+      "            return false;",
+      "        });",
+      "    })",
+      "",
+      "it('${2:Descripción del test}', () => {",
+      "    cy.visit('${3:https://ejemplo.com}')",
+      "    ",
+      "    // Interacciones",
+      "    cy.get('${34:#selector}').${5:type('${6:texto}')}",
+      "    ",
+      "    // Verificaciones",
+      "    cy.get('${7:#resultado}').should('${8:be.visible}')",
+      "});${0}",
+      "});"
+    ],
+    "description": "Snippet para test base de Cypress"
+  },
+  "Cypress Click": {
+    "prefix": "c_click",
+    "body": [
+      "cy.get('[${1:#argumento}]').should('be.visible').click({force: true})",
+      "${0}"
+    ],
+    "description": "Snippet para dar click a un elemento"
+  },
+  "Cypress contains and click": {
+    "prefix": "c_contains_click",
+    "body": [
+      "cy.get('${1:argumento}:contains(${2:texto})').should('be.visible').click({force: true})",
+      "${0}"
+    ],
+    "description": "Snippet para dar click a un elemento"
+  },
+  "Cypress visible": {
+    "prefix": "c_visible",
+    "body": ["cy.get('[${1:#argumento}]').should('be.visible')", "${0}"],
+    "description": "Snippet para agregar una assertion de visibilidad"
+  },
+  "Cypress visible and type": {
+    "prefix": "c_texto_argumentos",
+    "body": [
+      "cy.get('[${1:#argumento}]').should('be.visible').type('$2')",
+      "${0}"
+    ],
+    "description": "Snippet para escribir texto en un campo con selector personalizable"
+  }
+}
