@@ -17,3 +17,5 @@ module.exports = defineConfig({
         },
     },
 });
+
+// npx cypress run --record --key b71f4410-15c1-4a28-81cf-23ee458a4e2c
